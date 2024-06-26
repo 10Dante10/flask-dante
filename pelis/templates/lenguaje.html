@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{% block titulo %} Lenguajes {% endblock %}</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename ='style.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Lenguajes</h1>
+    <ul>
+      {% for lenguaje in lenguajes %}
+      <li>
+        <a href="{{url_for('lenguaje.detalle', id=lenguaje['language_id'])}}">
+          {{lenguaje['name'] }}</a
+        >
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
